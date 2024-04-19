@@ -7,6 +7,8 @@ exports.handler = async (event) => {
     const profile_pic_link = event.queryStringParameters.profile_pic_link; // Assuming the user data comes in the event object
     const requestOrigin = event.headers ? event.headers.origin : "*";
 
+    console.log(profile_pic_link);
+
     if (!profile_pic_link) {
         // If no user or profile link is available, return a default image
         return {
