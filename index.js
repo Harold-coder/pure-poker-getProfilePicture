@@ -4,7 +4,7 @@ const s3 = new AWS.S3();
 
 // Lambda handler function
 exports.handler = async (event) => {
-    const profile_pic_link = event.profile_pic_link; // Assuming the user data comes in the event object
+    const profile_pic_link = event.queryStringParameters.profile_pic_link; // Assuming the user data comes in the event object
     const requestOrigin = event.headers ? event.headers.origin : "*";
 
     if (!profile_pic_link) {
